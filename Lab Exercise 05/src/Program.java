@@ -1,8 +1,8 @@
 /*
- * Student Name: 
- * Lab Professor: 
- * Due Date: 
- * Description: 
+ * Student Name: Iain Peters
+ * Lab Professor: Stanley Piedas
+ * Due Date: November 25th
+ * Description: Lab Exercise 05 Dice Checker
  */
 public class Program {
 
@@ -16,9 +16,6 @@ public class Program {
 		final int EXIT_PROGRAM = 4;
 		int option = 0;
 		DiceChecker diceChecker = new DiceChecker();
-		//boolean HasUserStopped = false;
-		
-		
 		
 		do {
 			System.out.print("1 Enter Dice Roll Values \n2 Display Report \n3 Reset Dice Roll Data \n4 Exit Program \n");
@@ -34,19 +31,10 @@ public class Program {
 				diceChecker.resetData();
 				break;
 			case EXIT_PROGRAM:
-				//HasUserStopped = true;
 				break;	
 			}
 		} while (option != 4);
-		//while(option == 0 || option == 1 || option == 2 || option == 3);
-		//while(HasUserStopped == false);
 		System.out.print("Program by Iain Peters");
-		// do while loop
-		//     output menu options
-		//     get user option
-		//     use switch, delegate actions to diceChecker as needed
-		// output your name at end of program
-
 	}
 
 }
