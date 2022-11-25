@@ -62,6 +62,34 @@ public class DiceChecker {
 	 * Add programmer comments here.
 	 */
 	public void printReport() {
+		
+		int lastdigit = -1;
+		for (int index = 0; index < DICE_SIZE; index++) {
+			System.out.printf("%d",(index + 1));
+			
+			
+			
+			for (int index2 = 0; index2 < DICE_SIZE; index2++) {
+				//System.out.printf("%d",(index + 1));
+				if (values[index] == index2) {
+					System.out.printf("%3d", values[index]);
+					//values[index] = 0;
+					//lastdigit = values[index];
+				}
+				else {}
+					
+			
+			}
+			/*System.out.print(values[1]);
+			System.out.print(values[2]);
+			System.out.print(values[3]);
+			System.out.print(values[4]);
+			System.out.print(values[5]);
+			System.out.print(values[6]);
+			System.out.println();*/
+			System.out.println();
+			
+		}
 		// use a for-loop, inside a for-loop.
 		// for loop to traverse the array
 		//     write out the dice face number, padded to 3 letters wide
