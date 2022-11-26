@@ -63,20 +63,20 @@ public class DiceChecker {
 	 */
 	public void printReport() {
 		
-		int lastdigit = -1;
+		int lastdigit = 0;
 		for (int index = 0; index < DICE_SIZE; index++) {
 			System.out.printf("%d",(index + 1));
 			
 			
 			
-			for (int index2 = 0; index2 < DICE_SIZE; index2++) {
-				//System.out.printf("%d",(index + 1));
+			for (int index2 = 1; values[index] >= index2; index2++) {
+				System.out.print("*");
+				/*
 				if (values[index] == index2) {
-					System.out.printf("%3d", values[index]);
-					//values[index] = 0;
-					//lastdigit = values[index];
+					System.out.print("*");
+					//System.out.printf("%3d", values[index]);
 				}
-				else {}
+				else {}*/
 					
 			
 			}
