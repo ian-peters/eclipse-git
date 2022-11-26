@@ -2,12 +2,12 @@
  * Student Name: Iain Peters
  * Lab Professor: Stanley Piedas
  * Due Date: November 25th
- * Description: Lab Exercise 05 Dice Checker
+ * Description: Lab Exercise 05 Finished code
  */
 public class Program {
 
 	/*
-	 * Add programmer comments here.
+	 * The main method uses a case structure menu to determine what the user wishes to do. All inputs are delegated to the User class.
 	 */
 	public static void main(String[] args) {
 		final int ENTER_VALUES = 1;

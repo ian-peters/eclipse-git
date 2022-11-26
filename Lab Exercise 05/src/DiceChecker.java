@@ -1,12 +1,15 @@
 /*
- * Student Name: 
- * Lab Professor: 
- * Due Date: 
- * Description: 
+ * Student Name: Iain Peters
+ * Lab Professor:  Stanley Pieda
+ * Due Date: December 4th, 2022
+ * Description: Lab Exercise 05 Finished code.
  */
 
 /*
- * Add programmer comments here
+ * The DiceChecker class contains the programs worker methods that are referenced throughout the main method.
+ * This class accounts for the dice rolls that were entered by the user, and can also print the entered dice roll 
+ * statistics. It also has the functionality to clear the previously entered rolls, allowing the user
+ * to begin entering a new set of dice rolls.
  */
 public class DiceChecker {
 	private final int DICE_SIZE; // Initialization deferred to constructor
@@ -59,7 +62,10 @@ public class DiceChecker {
 	}
 	
 	/*
-	 * Add programmer comments here.
+	 * This method uses two for loops to display how many times each side of dice was rolled. 
+	 * First the label for the dice side is printed, then how many times that side was rolled
+	 * is printed in a series of asterisks (*). 
+	 * 
 	 */
 	public void printReport() {
 		for (int index = 0; index < DICE_SIZE; index++) {
