@@ -1,15 +1,17 @@
-/* Name: Iain Peters
- * Instructor: Stanley Pieda
+/* Author: Ian Peters
+ * Date: Nov 4th, 2022
+ * Last modified: Dec 14th, 2022
+ * Description: Hello World program created for git setup purposes
  */
 
 public class HelloWorld {
 
 	
 	/*
-	 * Main Method that contains Hello world
+	 * Main Method that contains Hello world output
 	 */
 	public static void main(String[] args) {
-		System.out.println("Hello world with Git"); //Hello world ouput
+		System.out.println("Hello world with Git"); 
 
 	}
 
