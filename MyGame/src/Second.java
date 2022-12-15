@@ -88,11 +88,12 @@ public class Second {
 			if (placement.playerMove(board, userMove, 'x')) {
 				WinChecker.winnerCheck(board);
 				
-				
+				int fuck;
 				
 				repeatedMove = false;
 				while(repeat) {
-					if ( WinChecker.getWinner() == 1) {
+				
+					if (WinChecker.getWinner() != 3) {
 						gameOver = true;
 						break;
 					}

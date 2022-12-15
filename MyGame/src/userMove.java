@@ -3,7 +3,7 @@
  * Last modified: Dec 13th
  * Description: TicTacToe game where you can play against a computer or another user (soon)
  * ToDo: 
- * 1 Prevent user and computer from placing their x or o in a spot that already has one. 
+ *
  * 2 Create a menu system that allows the user to choose whether they wish to play against the computer or another player
  * 3 Implement 2 player functionality
  */
@@ -57,8 +57,13 @@ public class userMove {
 				break;
 			}
 			else if (board [0][0] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -73,8 +78,13 @@ public class userMove {
 				break;
 			}
 			else if (board [0][1] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -90,8 +100,13 @@ public class userMove {
 				break;
 			}
 			else if (board [0][2] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -106,8 +121,13 @@ public class userMove {
 				break;
 			}
 			else if (board [1][0] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -123,8 +143,13 @@ public class userMove {
 				break;
 			}
 			else if (board [1][1] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -140,8 +165,13 @@ public class userMove {
 				break;
 			}
 			else if (board [1][2] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -156,8 +186,13 @@ public class userMove {
 				break;
 			}
 			else if (board [2][0] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -173,8 +208,13 @@ public class userMove {
 				break;
 			}
 			else if (board [2][1] == 'o') {
-				System.out.println("Space is filled.");
-				inputtedFilledSpace = false;
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
+					System.out.println("Space is filled.");
+					inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {
@@ -190,8 +230,13 @@ public class userMove {
 				break;
 			}
 			else if (board [2][2] == 'o') {
+				if (X_or_O == 'o') {
+					inputtedFilledSpace = false;
+				}
+				else {
 				System.out.println("Space is filled.");
 				inputtedFilledSpace = false;
+				}
 				break;
 			}
 			else {

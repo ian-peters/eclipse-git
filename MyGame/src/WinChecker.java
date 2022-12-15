@@ -14,7 +14,7 @@ public class WinChecker {
 	private static boolean computerWin = false;
 	private static boolean draw = false;
 	
-	private static int whoWins = 2;
+	private static int whoWins = 3;
 
 	
 	
