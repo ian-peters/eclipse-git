@@ -35,20 +35,25 @@ public class Second {
 		int numberPicked;	 
 		Boolean twoPlayer = false;
 		int userMove = 0;
+		int secondPlayerMove = 0;
 		
 		
 		/*
 		 * Gathers user inputs and calls the appropriate methods
 		 */
 		
-		System.out.print("Welcome. Select 2 player (1) or vs. computer (2)");
+		System.out.printf("Welcome. \n"
+				+ "(1) Two player \n"
+				+ "(2) Vs. computer:  ");
 		numberPicked = keyboard.nextInt();
 		
 		switch(numberPicked) {
 		case 1:
 			twoPlayer = true;
+			break;
 		case 2:
 			twoPlayer = false;
+			break;
 			
 		}
 			
@@ -64,7 +69,7 @@ public class Second {
 			
 		
 		
-		System.out.print("Enter your move (1-9) ");
+		System.out.print("Your turn (1-9): ");
 		boolean hasNextInt = false;
 		boolean isInputBad = true;
 		
@@ -104,12 +109,13 @@ public class Second {
 		isInputBad = true;
 		stop = true;
 		
+		int secondPlayersMove;
 		boolean repeat = true;
 		boolean repeatedMove = true;
 		while(repeatedMove) {
 			if (placement.playerMove(board, userMove, 'x')) {
 				WinChecker.winnerCheck(board);
-				
+			
 				repeatedMove = false;
 				while(repeat) {
 				
@@ -118,10 +124,18 @@ public class Second {
 						break;
 					}
 					if (twoPlayer == true) {
-						placement.playerMove(board, userMove, 'o');
-						//insert other input here
+						System.out.print("2nd players turn (1-9): ");
+						secondPlayersMove = keyboard.nextInt();
+						placement.playerMove(board, secondPlayersMove, 'o');
 						WinChecker.winnerCheck(board);
+						if (WinChecker.getWinner() != 3) {
+							gameOver = true;
+							break;
+						}
+						repeat = false;
+						
 					}
+					/*
 					else {
 						
 						if (compMove.cpuMove(board, userMove, 'o')) {
@@ -136,7 +150,7 @@ public class Second {
 							repeat = true;
 							compMove.cpuMove(board, userMove, 'o');
 						}
-					}
+					}*/
 					
 					
 				}
