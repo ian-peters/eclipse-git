@@ -66,12 +66,7 @@ public class Second {
 			else {
 				stop = true;
 			}
-			if(placement.preventRepeatedMoves(board, userMove)) {
-				stop = true;
-			}
-			else {
-				stop = false;
-			}
+			
 			
 			
 			

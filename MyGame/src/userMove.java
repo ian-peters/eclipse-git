@@ -39,139 +39,144 @@ public class userMove {
 	}
 	
 	/*
-	 * This method prevents the user from repeating their moves.
+	 * This method places moves of the player/computer and prevents the user from repeating their moves.
 	 * ToDo: Prevent the user from making a move on spaces that the computer has already made a move
 	 * also: prevent computer from making repeated moves
 	 */
-	public boolean preventRepeatedMoves(char[][]board, int position) {
-		boolean repeatedMove = false;
-		
-		switch(position) {
-		case 1:
-			if (board[0][0] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true; 
-				break;
-			}
-			
-			
-			break;
-			
-		case 2:
-			if (board[0][1] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true;
-				break;
-				}
-			break;
-			
-		case 3:
-			if (board[0][2] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true; 
-				break;
-				}
-			break;
-			
-		case 4:
-			if (board[1][0] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true; 
-				break;
-				}
-			break;
-			
-		case 5:
-			if (board[1][1] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true;
-				break;
-				}
-			break;
-			
-		case 6:
-			if (board[1][2] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true;
-				break;
-				}
-			break;
-			
-		case 7:
-			if (board[2][0] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true; 
-				break;
-				}
-			break;
-			
-		case 8:
-			if (board[2][1] == 'x') {
-				System.out.print("That space is filled");
-				repeatedMove = true; 
-				break;
-				}
-			break;
-			
-		case 9:
-			if (board[2][2] == 'x') {
-				System.out.println("That space is filled");
-				repeatedMove = true; 
-				break;
-				}
-			break;
-			
-		default:
-			repeatedMove = false;
-			break;
-			
-		}
-		repeatedMove = false;
-		
-			
-		return repeatedMove;
-	}
 	
-	
-
 	public char[][] playerMove(char[][] board, int position, char X_or_O) {
 		
 		switch(position) {
 		case 1:
-			board[0][0] = X_or_O;
-			break;
+			if (board [0][0] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [0][0] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[0][0] = X_or_O;
+				break;
+			}
 			
 		case 2:
-			board[0][1] = X_or_O;
-			break;
+			if (board [0][1] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [0][1] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[0][1] = X_or_O;
+				break;
+			}
+			
 			
 		case 3:
-			board[0][2] = X_or_O;
-			break;
+			if (board [0][2] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [0][2] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[0][2] = X_or_O;
+				break;
+			}
 			
 		case 4:
-			board[1][0] = X_or_O;
-			break;
+			if (board [1][0] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [1][0] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[1][0] = X_or_O;
+				break;
+			}
+			
 			
 		case 5:
-			board[1][1] = X_or_O;
-			break;
+			if (board [1][1] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [1][1] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[1][1] = X_or_O;
+				break;
+			}
+			
 			
 		case 6:
-			board[1][2] = X_or_O;
-			break;
+			if (board [1][2] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [1][2] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[1][2] = X_or_O;
+				break;
+			}
 			
 		case 7:
-			board[2][0] = X_or_O;
-			break;
+			if (board [2][0] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [2][0] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[2][0] = X_or_O;
+				break;
+			}
+			
 			
 		case 8:
-			board[2][1] = X_or_O;
-			break;
+			if (board [2][1] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [2][1] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[2][1] = X_or_O;
+				break;
+			}
+			
 			
 		case 9:
-		    board[2][2] = X_or_O;
-			break;
+			if (board [2][2] == 'x') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else if (board [2][2] == 'o') {
+				System.out.println("Space is filled.");
+				break;
+			}
+			else {
+				board[2][2] = X_or_O;
+				break;
+			}
 			
 		default:
 			break;
