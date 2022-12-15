@@ -4,7 +4,6 @@
  * Description: TicTacToe game where you can play against a computer or another user (soon)
  * ToDo: 
  * 0 Fix Data validation - broken again
- * 1 Prevent user and computer from placing their x or o in a spot that already has one. 
  * 2 Create a menu system that allows the user to choose whether they wish to play against the computer or another player
  * 3 Implement 2 player functionality. Updated ToDo.
  * 
@@ -15,6 +14,11 @@ import java.util.Scanner;
 
 public class Second {
 
+	
+	final int VS_COMPUTER = 0;
+	final int TWO_PLAYER = 1;
+	final int CREDITS = 3;
+	
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		boolean stop = true;
@@ -27,7 +31,9 @@ public class Second {
 		userMove placement = new userMove();
 		WinChecker winnerCheck = new WinChecker();
 		computerMove compMove = new computerMove();
-		
+		Boolean menu = true;
+		int numberPicked;	 
+		Boolean twoPlayer = false;
 		int userMove = 0;
 		
 		
@@ -35,11 +41,27 @@ public class Second {
 		 * Gathers user inputs and calls the appropriate methods
 		 */
 		
+		System.out.print("Welcome. Select 2 player (1) or vs. computer (2)");
+		numberPicked = keyboard.nextInt();
 		
+		switch(numberPicked) {
+		case 1:
+			twoPlayer = true;
+		case 2:
+			twoPlayer = false;
+			
+		}
 			
 		
 		while(gameOver != true) {
 		
+		
+		/*
+		 * Menu system
+		 */
+	
+		
+			
 		
 		
 		System.out.print("Enter your move (1-9) ");
@@ -88,8 +110,6 @@ public class Second {
 			if (placement.playerMove(board, userMove, 'x')) {
 				WinChecker.winnerCheck(board);
 				
-				int fuck;
-				
 				repeatedMove = false;
 				while(repeat) {
 				
@@ -97,18 +117,28 @@ public class Second {
 						gameOver = true;
 						break;
 					}
-					if (compMove.cpuMove(board, userMove, 'o')) {
-						repeat = false;
-					
-					if (WinChecker.winnerCheck(board)) {
-						gameOver = true;
-						break;
-					}
+					if (twoPlayer == true) {
+						placement.playerMove(board, userMove, 'o');
+						//insert other input here
+						WinChecker.winnerCheck(board);
 					}
 					else {
-						repeat = true;
-						compMove.cpuMove(board, userMove, 'o');
+						
+						if (compMove.cpuMove(board, userMove, 'o')) {
+							repeat = false;
+						
+						if (WinChecker.winnerCheck(board)) {
+							gameOver = true;
+							break;
+						}
+						}
+						else {
+							repeat = true;
+							compMove.cpuMove(board, userMove, 'o');
+						}
 					}
+					
+					
 				}
 				
 			}
