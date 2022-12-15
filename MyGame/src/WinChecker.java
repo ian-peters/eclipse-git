@@ -1,0 +1,83 @@
+/* Author: Iain Peters
+ * Date: Dec 13th, 2022
+ * Last modified: Dec 13th
+ * Description: TicTacToe game where you can play against a computer or another user (soon)
+ * ToDo: 
+ * 1 Prevent user and computer from placing their x or o in a spot that already has one. 
+ * 2 Create a menu system that allows the user to choose whether they wish to play against the computer or another player
+ * 3 Implement 2 player functionality
+ */
+public class WinChecker {
+	
+	private static boolean winner = false;
+	public WinChecker () {}
+	private static boolean computerWin = false;
+
+	
+	
+	/*
+	 * Responsible for determining if the user or the computer has won
+	 * a return of false = user win
+	 */
+	public static boolean getComputerWin() {
+		return computerWin;
+	}
+	public static void setComputerWin(boolean computerWin) {
+		WinChecker.computerWin = computerWin;
+	}
+
+
+	/*
+	 * Responsible for checking whether the user has won
+	 */
+	public static boolean winnerCheck (char board[][]){ 
+			//Left to right
+		if ((board[0][0] == 'x' && board[0][1] == 'x' && board[0][2] == 'x') ||
+			(board[1][0] == 'x' && board[1][1] == 'x' && board[1][2] == 'x') ||
+			(board[2][0] == 'x' && board[2][1] == 'x' && board[2][2] == 'x') ||
+			
+			//Top to bottom
+			(board[0][0] == 'x' && board[1][0] == 'x' && board[2][0] == 'x') ||
+			(board[0][1] == 'x' && board[1][1] == 'x' && board[2][1] == 'x') ||
+			(board[0][2] == 'x' && board[1][2] == 'x' && board[2][2] == 'x') ||
+			
+			//Diagonal
+			(board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') ||
+			(board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') )
+		{ 
+			setComputerWin(false);
+			winner = true;
+		
+			}
+		
+		
+		/*
+		 * Checks if the computer has won
+		 */
+		else if ((board[0][0] == 'o' && board[0][1] == 'o' && board[0][2] == 'o') ||
+				(board[1][0] == 'o' && board[1][1] == 'o' && board[1][2] == 'o') ||
+				(board[2][0] == 'o' && board[2][1] == 'o' && board[2][2] == 'o') ||
+				
+				//Top to bottom
+				(board[0][0] == 'o' && board[1][0] == 'o' && board[2][0] == 'o') ||
+				(board[0][1] == 'o' && board[1][1] == 'o' && board[2][1] == 'o') ||
+				(board[0][2] == 'o' && board[1][2] == 'o' && board[2][2] == 'o') ||
+				
+				//Diagonal
+				(board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o') ||
+				(board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o') )
+			{ 
+				setComputerWin(true);
+				winner = true;
+				
+				}
+			
+			
+		
+		
+		return winner;
+	}
+
+	
+	
+}
