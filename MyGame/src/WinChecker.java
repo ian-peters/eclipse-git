@@ -13,6 +13,8 @@ public class WinChecker {
 	public WinChecker () {}
 	private static boolean computerWin = false;
 	private static boolean draw = false;
+	
+	private static int whoWins;
 
 	
 	
@@ -28,7 +30,7 @@ public class WinChecker {
 	}
 	
 	public static void setDraw(boolean draw) {
-		WinChecker.draw= draw;
+		WinChecker.draw = draw;
 	}
 	
 	public static boolean getDraw() {
