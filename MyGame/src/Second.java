@@ -173,15 +173,33 @@ public class Second {
 		}
 		
 		
-		if (WinChecker.getWinner() == 0) {
-			System.out.println("The computer has won, Oh no no no no.");
+		
+		/*
+		 * Different if-statements depending on whether two players are playing or it's user vs. computer
+		 */
+		
+		if (numberPicked == 1) {
+			if (WinChecker.getWinner() == 0) {
+				System.out.println("Second player WINS!!!!");
+			}
+			else if (WinChecker.getWinner() == 1) {
+				System.out.println("It's a draw");
+			}
+			else {
+				System.out.println("First player WINS!!!!");
+			}
 		}
-		else if (WinChecker.getWinner() == 1) {
-			System.out.println("It's a draw");
-		}
-		else {
-			System.out.println("Congrats!!! you WIN!!!");
-			
+		if(numberPicked == 2) {
+			if (WinChecker.getWinner() == 0) {
+				System.out.println("The computer has won, Oh no no no no.");
+			}
+			else if (WinChecker.getWinner() == 1) {
+				System.out.println("It's a draw");
+			}
+			else {
+				System.out.println("Congrats!!! you WIN!!!");
+			}
+		
 		}
 		
 		
@@ -217,50 +235,6 @@ public class Second {
 	}
 		
 	
-	/*
-	 * User move placement
-	 *//*
-	private static void playerMove(char[][] board, int position) {
-	switch(position) {
-	case 1:
-		board[0][0] = 'x';
-		break;
-		
-	case 2:
-		board[0][1] = 'x';
-		break;
-		
-	case 3:
-		board[0][2] = 'x';
-		break;
-		
-	case 4:
-		board[1][0] = 'x';
-		break;
-		
-	case 5:
-		board[1][1] = 'x';
-		break;
-		
-	case 6:
-		board[1][2] = 'x';
-		break;
-		
-	case 7:
-		board[2][0] = 'x';
-		break;
-		
-	case 8:
-		board[2][1] = 'x';
-		break;
-		
-	case 9:
-		board[2][2] = 'x';
-		break;
-		
-	default:
-		break;
-	}
-	}*/
+	
 
 }
