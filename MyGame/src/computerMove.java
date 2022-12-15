@@ -9,8 +9,9 @@ public class computerMove {
 	userMove reUseSwitchinUser= new userMove();
 	
 	
-	public void cpuMove(char[][] board, int move, char X_or_O){
+	public boolean cpuMove(char[][] board, int move, char X_or_O){
 		boolean badMove = true;
+		boolean filledSpace = true;
 		int compMove = 0;
 		
 		while (badMove) {
@@ -18,18 +19,15 @@ public class computerMove {
 			if(compMove != 0 && compMove != move) {
 				reUseSwitchinUser.playerMove(board, compMove, X_or_O);
 				badMove = false;
+				filledSpace = true;
 			}
 			else {
 				compMove = random.nextInt(9) + 1;
+				filledSpace = false;
 			}
-			
-			
-			
-			
-			
 		
 		}
-		
+		return filledSpace;
 	
 	}
 	

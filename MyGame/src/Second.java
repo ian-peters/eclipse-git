@@ -74,15 +74,35 @@ public class Second {
 		
 		}
 	
-		
-		
 		isInputBad = true;
 		stop = true;
 		
+		boolean repeat = true;
+		boolean repeatedMove = true;
+		while(repeatedMove) {
+			if (placement.playerMove(board, userMove, 'x')) {
+				
+				repeatedMove = false;
+			}
+			else {
+				repeatedMove = true;
+				userMove = keyboard.nextInt();
+			}
+		// keyboard.nextLine();
+		}
+		
+		while(repeat) {
+			if (compMove.cpuMove(board, userMove, 'o')) {
+				repeat = false;
+			}
+			else {
+				repeat = true;
+			}
+		}
 		
 		
-		placement.playerMove(board, userMove, 'x');
-		compMove.cpuMove(board, userMove, 'o');
+		//placement.playerMove(board, userMove, 'x');
+		//compMove.cpuMove(board, userMove, 'o');
 		printBoard(board);
 		
 		if (WinChecker.winnerCheck(board)) {
@@ -96,7 +116,7 @@ public class Second {
 			System.out.println("Congrats!!! you WIN!!!");
 		}
 		else {
-			System.out.println("The computer has won, Oh no.");
+			System.out.println("The computer has won, Oh no no no no.");
 		}
 		
 		

@@ -9,7 +9,7 @@
  */
 public class userMove {
 	private char input;
-	int[] userDoubleInput = new int[9];
+	char[][] userDoubleInput = new char[2][2];
 	
 	userMove() {}
 	
@@ -38,14 +38,17 @@ public class userMove {
 	return validate;
 	}
 	
+	public char[][] setBoard(){
+		return userDoubleInput;
+	}
 	/*
 	 * This method places moves of the player/computer and prevents the user from repeating their moves.
 	 * ToDo: Prevent the user from making a move on spaces that the computer has already made a move
 	 * also: prevent computer from making repeated moves
 	 */
 	
-	public char[][] playerMove(char[][] board, int position, char X_or_O) {
-		
+	public boolean playerMove(char[][] board, int position, char X_or_O) {
+		boolean inputtedFilledSpace = true;
 		switch(position) {
 		case 1:
 			if (board [0][0] == 'x') {
@@ -167,6 +170,7 @@ public class userMove {
 		case 9:
 			if (board [2][2] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [2][2] == 'o') {
@@ -175,13 +179,15 @@ public class userMove {
 			}
 			else {
 				board[2][2] = X_or_O;
+				inputtedFilledSpace = true;
 				break;
 			}
 			
 		default:
 			break;
 		}
-		return board;
+		//board = userDoubleInput;
+		return inputtedFilledSpace;
 		}
 	
 }
