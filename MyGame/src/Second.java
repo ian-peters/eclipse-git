@@ -6,7 +6,7 @@
  * 0 Fix Data validation - broken again
  * 1 Prevent user and computer from placing their x or o in a spot that already has one. 
  * 2 Create a menu system that allows the user to choose whether they wish to play against the computer or another player
- * 3 Implement 2 player functionality.
+ * 3 Implement 2 player functionality. Updated ToDo.
  * 
  */
 
