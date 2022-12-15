@@ -33,11 +33,6 @@ public class Second {
 		int userMove = 0;		
 		
 		/*
-		 * Gathers user inputs and calls the appropriate methods
-		 */
-		
-		
-		/*
 		 * Menu system with 3 branches
 		 */
 		System.out.printf("Welcome. \n"
@@ -117,7 +112,7 @@ public class Second {
 						secondPlayersMove = keyboard.nextInt();
 						placement.playerMove(board, secondPlayersMove, 'o');
 						WinChecker.winnerCheck(board);
-						if (WinChecker.getWinner() != 3) {
+							if (WinChecker.getWinner() != 3) {
 							gameOver = true;
 							break;
 						}
@@ -129,10 +124,10 @@ public class Second {
 						if (compMove.cpuMove(board, userMove, 'o')) {
 								repeat = false;
 							
-						if (WinChecker.winnerCheck(board)) {
-								gameOver = true;
-								break;
-						}
+								if (WinChecker.winnerCheck(board)) {
+									gameOver = true;
+									break;
+								}
 						}
 						else {
 							repeat = true;
