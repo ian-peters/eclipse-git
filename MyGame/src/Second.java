@@ -86,15 +86,23 @@ public class Second {
 		boolean repeatedMove = true;
 		while(repeatedMove) {
 			if (placement.playerMove(board, userMove, 'x')) {
-				if (WinChecker.winnerCheck(board)) {
-					gameOver = true;
-					break;
-				}
+				WinChecker.winnerCheck(board);
+				
+				
 				
 				repeatedMove = false;
 				while(repeat) {
+					if ( WinChecker.getWinner() == 1) {
+						gameOver = true;
+						break;
+					}
 					if (compMove.cpuMove(board, userMove, 'o')) {
 						repeat = false;
+					
+					if (WinChecker.winnerCheck(board)) {
+						gameOver = true;
+						break;
+					}
 					}
 					else {
 						repeat = true;
@@ -120,10 +128,10 @@ public class Second {
 		}
 		
 		
-		if (WinChecker.getComputerWin()) {
+		if (WinChecker.getWinner() == 0) {
 			System.out.println("The computer has won, Oh no no no no.");
 		}
-		else if (WinChecker.getDraw()) {
+		else if (WinChecker.getWinner() == 1) {
 			System.out.println("It's a draw");
 		}
 		else {

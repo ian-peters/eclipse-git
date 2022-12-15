@@ -14,7 +14,7 @@ public class WinChecker {
 	private static boolean computerWin = false;
 	private static boolean draw = false;
 	
-	private static int whoWins;
+	private static int whoWins = 2;
 
 	
 	
@@ -22,6 +22,21 @@ public class WinChecker {
 	 * Responsible for determining if the user or the computer has won
 	 * a return of false = user win
 	 */
+	
+	public static int getWinner() {
+		return whoWins;
+	}
+
+	public static void setComputerWin(int compWon) {
+		whoWins = compWon;
+	}
+	
+	
+	public static void setDraw(int aDraw) {
+		whoWins = aDraw;
+	}
+	
+	/*
 	public static boolean getComputerWin() {
 		return computerWin;
 	}
@@ -36,11 +51,14 @@ public class WinChecker {
 	public static boolean getDraw() {
 		return draw;
 	}
-
+	*/
+	
+	
 
 	/*
 	 * Responsible for checking whether the user has won
 	 */
+	//public static boolean winnerCheck (char board[][]){ 
 	public static boolean winnerCheck (char board[][]){ 
 			//Left to right
 		if ((board[0][0] == 'x' && board[0][1] == 'x' && board[0][2] == 'x') ||
@@ -56,7 +74,7 @@ public class WinChecker {
 			(board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') ||
 			(board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') )
 		{ 
-			setComputerWin(false);
+			setComputerWin(2);
 			winner = true;
 		
 			}
@@ -78,7 +96,7 @@ public class WinChecker {
 				(board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o') ||
 				(board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o') )
 			{ 
-				setComputerWin(true);
+				setComputerWin(0);
 				winner = true;
 				
 				}
@@ -87,11 +105,10 @@ public class WinChecker {
 				 (board[1][0] != ' ' && board[1][1] != ' ' && board[1][2] != ' ') &&
 				 (board[2][0] != ' ' && board[2][1] != ' ' && board[2][2] != ' ')) 
 				 {
-				 setDraw(true);
+				 setDraw(1);
 				 }
-		
-		
-		return winner;
+	
+	   return winner;
 	}
 
 	
