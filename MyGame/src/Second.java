@@ -1,11 +1,8 @@
 /* Author: Iain Peters
  * Date: Dec 13th, 2022
  * Last modified: Dec 13th
- * Description: TicTacToe game where you can play against a computer or another user (soon)
+ * Description: TicTacToe game where you can play against a computer or another user.
  * ToDo: 
- * 0 Fix Data validation - broken again
- * 2 Create a menu system that allows the user to choose whether they wish to play against the computer or another player
- * 3 Implement 2 player functionality. Updated ToDo.
  * 
  */
 
@@ -31,22 +28,23 @@ public class Second {
 		userMove placement = new userMove();
 		WinChecker winnerCheck = new WinChecker();
 		computerMove compMove = new computerMove();
-		Boolean menu = true;
 		int numberPicked;	 
 		Boolean twoPlayer = false;
-		int userMove = 0;
-		int secondPlayerMove = 0;
-		
+		int userMove = 0;		
 		
 		/*
 		 * Gathers user inputs and calls the appropriate methods
 		 */
 		
+		
+		/*
+		 * Menu system with 3 branches
+		 */
 		System.out.printf("Welcome. \n"
 				+ "(1) Two player \n"
-				+ "(2) Vs. computer:  ");
+				+ "(2) Vs. computer\n"
+				+ "(3) Credits: ");
 		numberPicked = keyboard.nextInt();
-		
 		switch(numberPicked) {
 		case 1:
 			twoPlayer = true;
@@ -54,29 +52,23 @@ public class Second {
 		case 2:
 			twoPlayer = false;
 			break;
-			
+		case 3:
+			System.out.print("Program by Ian. ");
+			System.exit(0);
+			break;	
 		}
 			
 		
-		while(gameOver != true) {
-		
-		
-		/*
-		 * Menu system
-		 */
-	
-		
-			
-		
-		
+		//Beginning of main program loop
+		while(gameOver != true)   {
 		System.out.print("Your turn (1-9): ");
-		boolean hasNextInt = false;
+		boolean hasNextInt = false;				//important variables for the interior loops
 		boolean isInputBad = true;
 		
 		
 		
 		/*
-		 * While loop that ensures correct inputs
+		 * While loop that validates inputs as numeric and within the accepted numeric range 
 		 */
 		
 		while (stop) {
@@ -89,7 +81,7 @@ public class Second {
 				else {
 					System.out.println("input a number");
 				}
-				keyboard.nextLine();
+				keyboard.nextLine();						//clears up input stream to prevent infinite loop
 			}
 		
 			if (placement.dataValidator(userMove)) {
@@ -98,28 +90,25 @@ public class Second {
 			else {
 				stop = true;
 			}
-			
-			
-			
-			
-			
-		
+	
 		}
 	
-		isInputBad = true;
+		isInputBad = true;		//Again, prevents infinite loop
 		stop = true;
+		
+	
 		
 		int secondPlayersMove;
 		boolean repeat = true;
 		boolean repeatedMove = true;
+		
 		while(repeatedMove) {
 			if (placement.playerMove(board, userMove, 'x')) {
-				WinChecker.winnerCheck(board);
-			
+				WinChecker.winnerCheck(board);			//Prevents the computer from infinitely selecting filled positions at the end of the game
 				repeatedMove = false;
 				while(repeat) {
 				
-					if (WinChecker.getWinner() != 3) {
+					if (WinChecker.getWinner() != 3) {		
 						gameOver = true;
 						break;
 					}
@@ -135,24 +124,23 @@ public class Second {
 						repeat = false;
 						
 					}
-					/*
 					else {
-						
+							
 						if (compMove.cpuMove(board, userMove, 'o')) {
-							repeat = false;
-						
+								repeat = false;
+							
 						if (WinChecker.winnerCheck(board)) {
-							gameOver = true;
-							break;
+								gameOver = true;
+								break;
 						}
 						}
 						else {
 							repeat = true;
 							compMove.cpuMove(board, userMove, 'o');
 						}
-					}*/
-					
-					
+						
+					}
+			
 				}
 				
 			}
@@ -160,18 +148,10 @@ public class Second {
 				repeatedMove = true;
 				userMove = keyboard.nextInt();
 			}
-		// keyboard.nextLine();
 		}
-		
-		
-		
-		//placement.playerMove(board, userMove, 'x');
-		//compMove.cpuMove(board, userMove, 'o');
 		printBoard(board);
 		
-		
 		}
-		
 		
 		
 		/*
@@ -201,11 +181,7 @@ public class Second {
 			}
 		
 		}
-		
-		
-		
-		
-		
+
 	}
 	
 	/*
