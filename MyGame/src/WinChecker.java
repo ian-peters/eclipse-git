@@ -12,6 +12,7 @@ public class WinChecker {
 	private static boolean winner = false;
 	public WinChecker () {}
 	private static boolean computerWin = false;
+	private static boolean draw = false;
 
 	
 	
@@ -24,6 +25,14 @@ public class WinChecker {
 	}
 	public static void setComputerWin(boolean computerWin) {
 		WinChecker.computerWin = computerWin;
+	}
+	
+	public static void setDraw(boolean draw) {
+		WinChecker.draw= draw;
+	}
+	
+	public static boolean getDraw() {
+		return draw;
 	}
 
 
@@ -71,8 +80,13 @@ public class WinChecker {
 				winner = true;
 				
 				}
-			
-			
+		
+		else if ((board[0][0] != ' ' && board[0][1] != ' ' && board[0][2] != ' ') &&
+				 (board[1][0] != ' ' && board[1][1] != ' ' && board[1][2] != ' ') &&
+				 (board[2][0] != ' ' && board[2][1] != ' ' && board[2][2] != ' ')) 
+				 {
+				 setDraw(true);
+				 }
 		
 		
 		return winner;

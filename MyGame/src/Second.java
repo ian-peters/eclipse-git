@@ -34,7 +34,12 @@ public class Second {
 		/*
 		 * Gathers user inputs and calls the appropriate methods
 		 */
+		
+		
+			
+		
 		while(gameOver != true) {
+		
 		
 		
 		System.out.print("Enter your move (1-9) ");
@@ -81,8 +86,22 @@ public class Second {
 		boolean repeatedMove = true;
 		while(repeatedMove) {
 			if (placement.playerMove(board, userMove, 'x')) {
+				if (WinChecker.winnerCheck(board)) {
+					gameOver = true;
+					break;
+				}
 				
 				repeatedMove = false;
+				while(repeat) {
+					if (compMove.cpuMove(board, userMove, 'o')) {
+						repeat = false;
+					}
+					else {
+						repeat = true;
+						compMove.cpuMove(board, userMove, 'o');
+					}
+				}
+				
 			}
 			else {
 				repeatedMove = true;
@@ -91,32 +110,25 @@ public class Second {
 		// keyboard.nextLine();
 		}
 		
-		while(repeat) {
-			if (compMove.cpuMove(board, userMove, 'o')) {
-				repeat = false;
-			}
-			else {
-				repeat = true;
-			}
-		}
 		
 		
 		//placement.playerMove(board, userMove, 'x');
 		//compMove.cpuMove(board, userMove, 'o');
 		printBoard(board);
 		
-		if (WinChecker.winnerCheck(board)) {
-			gameOver = true;
+		
 		}
 		
 		
-		} 
-		
-		if (WinChecker.getComputerWin() == false) {
-			System.out.println("Congrats!!! you WIN!!!");
+		if (WinChecker.getComputerWin()) {
+			System.out.println("The computer has won, Oh no no no no.");
+		}
+		else if (WinChecker.getDraw()) {
+			System.out.println("It's a draw");
 		}
 		else {
-			System.out.println("The computer has won, Oh no no no no.");
+			System.out.println("Congrats!!! you WIN!!!");
+			
 		}
 		
 		

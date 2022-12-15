@@ -53,10 +53,12 @@ public class userMove {
 		case 1:
 			if (board [0][0] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [0][0] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -67,10 +69,12 @@ public class userMove {
 		case 2:
 			if (board [0][1] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [0][1] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -82,10 +86,12 @@ public class userMove {
 		case 3:
 			if (board [0][2] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [0][2] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -96,10 +102,12 @@ public class userMove {
 		case 4:
 			if (board [1][0] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [1][0] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -111,10 +119,12 @@ public class userMove {
 		case 5:
 			if (board [1][1] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [1][1] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -126,10 +136,12 @@ public class userMove {
 		case 6:
 			if (board [1][2] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [1][2] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -140,10 +152,12 @@ public class userMove {
 		case 7:
 			if (board [2][0] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [2][0] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -155,10 +169,12 @@ public class userMove {
 		case 8:
 			if (board [2][1] == 'x') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else if (board [2][1] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
@@ -175,6 +191,7 @@ public class userMove {
 			}
 			else if (board [2][2] == 'o') {
 				System.out.println("Space is filled.");
+				inputtedFilledSpace = false;
 				break;
 			}
 			else {
