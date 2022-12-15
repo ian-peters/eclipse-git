@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class Second {
 
-	
-	final int VS_COMPUTER = 0;
-	final int TWO_PLAYER = 1;
-	final int CREDITS = 3;
+
+	final static int TWO_PLAYER = 1;
+	final static int VS_COMPUTER = 2;
+	final static int CREDITS = 3;
 	
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
@@ -46,13 +46,13 @@ public class Second {
 				+ "(3) Credits: ");
 		numberPicked = keyboard.nextInt();
 		switch(numberPicked) {
-		case 1:
+		case TWO_PLAYER:
 			twoPlayer = true;
 			break;
-		case 2:
+		case VS_COMPUTER:
 			twoPlayer = false;
 			break;
-		case 3:
+		case CREDITS:
 			System.out.print("Program by Ian. ");
 			System.exit(0);
 			break;	
@@ -179,9 +179,7 @@ public class Second {
 			else {
 				System.out.println("Congrats!!! you WIN!!!");
 			}
-		
 		}
-
 	}
 	
 	/*
