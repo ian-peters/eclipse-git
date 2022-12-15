@@ -38,9 +38,102 @@ public class userMove {
 	return validate;
 	}
 	
+	/*
+	 * This method prevents the user from repeating their moves.
+	 * ToDo: Prevent the user from making a move on spaces that the computer has already made a move
+	 * also: prevent computer from making repeated moves
+	 */
+	public boolean preventRepeatedMoves(char[][]board, int position) {
+		boolean repeatedMove = false;
+		
+		switch(position) {
+		case 1:
+			if (board[0][0] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true; 
+				break;
+			}
+			
+			
+			break;
+			
+		case 2:
+			if (board[0][1] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true;
+				break;
+				}
+			break;
+			
+		case 3:
+			if (board[0][2] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true; 
+				break;
+				}
+			break;
+			
+		case 4:
+			if (board[1][0] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true; 
+				break;
+				}
+			break;
+			
+		case 5:
+			if (board[1][1] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true;
+				break;
+				}
+			break;
+			
+		case 6:
+			if (board[1][2] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true;
+				break;
+				}
+			break;
+			
+		case 7:
+			if (board[2][0] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true; 
+				break;
+				}
+			break;
+			
+		case 8:
+			if (board[2][1] == 'x') {
+				System.out.print("That space is filled");
+				repeatedMove = true; 
+				break;
+				}
+			break;
+			
+		case 9:
+			if (board[2][2] == 'x') {
+				System.out.println("That space is filled");
+				repeatedMove = true; 
+				break;
+				}
+			break;
+			
+		default:
+			repeatedMove = false;
+			break;
+			
+		}
+		repeatedMove = false;
+		
+			
+		return repeatedMove;
+	}
 	
 	
-	
+
 	public char[][] playerMove(char[][] board, int position, char X_or_O) {
 		
 		switch(position) {

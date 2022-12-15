@@ -66,11 +66,24 @@ public class Second {
 			else {
 				stop = true;
 			}
+			if(placement.preventRepeatedMoves(board, userMove)) {
+				stop = true;
+			}
+			else {
+				stop = false;
+			}
+			
+			
+			
+			
 		
 		}
 	
+		
+		
 		isInputBad = true;
 		stop = true;
+		
 		
 		
 		placement.playerMove(board, userMove, 'x');
