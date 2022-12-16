@@ -18,43 +18,31 @@ public class InputOutput {
 	
 	
 	while (gameNotOver) {
-		
 		System.out.print("Enter your move: ");
 		userMove = keyboard.nextInt();
-		nextMove.insertMove(board, userMove, 'x');
-		printedBoard.printBoard(board);
 		
+		//Selected column column/row combination must be empty
+		if (nextMove.repeatedMove(board, userMove) == 1) {
+		}
+			
+		else {
+			nextMove.insertMove(board, userMove, 'x');
+			printedBoard.printBoard(board);
+			
+		}
+		
+	
+		
+	
+		
+
+		//Checks if the game is over
 		if (gameOverCheck.CallMethod(board, 'x') != 0) {
 			System.out.print(gameOverCheck.printEndMessage());
 			gameNotOver = false;
 		}
-		
-		
-		
-		
-		
-		/*
-		if(gameOverCheck.wonDiagonal(board, 'x') != 0) {
-			System.out.print(gameOverCheck.printEndMessage());
-			gameNotOver = false;
-		}
-		
-		if(gameOverCheck.testGame(board, 'x') != 0) {
-			System.out.print(gameOverCheck.printEndMessage());
-			gameNotOver = false;
-			
-		}
-		
-		if (gameOverCheck.EndGame(board) != 0) {
-			System.out.print(gameOverCheck.printEndMessage());
-			gameNotOver = false;
-		}*/
-		
-		
-		
 	
 	
+		}
 	}
-	}
-
 }
