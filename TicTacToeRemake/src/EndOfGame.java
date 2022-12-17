@@ -1,5 +1,5 @@
 /*
- * Author: Iain Peters
+ * Author: Ian Peters
  * Date: Dec 16th
  * Last Modified: Dec 16th
  * Description: Remake of the TicTacToe program with more emphasis on OOP
@@ -9,9 +9,14 @@
 public class EndOfGame {
 	private int result;
 	
+	/*
+	 * No argument constructor;
+	 */
 	public EndOfGame() {}
 	
-	
+	/*
+	 * Method responsible for returning the proper end result message
+	 */
 	public String printEndMessage() {
 		String endMessage = null;
 		switch(result) {
@@ -31,6 +36,9 @@ public class EndOfGame {
 	}
 	
 	
+	/*
+	 * Catch-all method created to simplify calls to this classes methods
+	 */
 	public int CallMethod(char[][] board, char symbol) {
 	int result = 0;
 		if (wonDiagonal(board, symbol) != 0) {
