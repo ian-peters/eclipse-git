@@ -11,6 +11,26 @@ public class placeMove {
 	private char[][] board;
 	public placeMove () {}
 	
+	/*
+	 * This method validates that the user has entered a valid move (1-9)
+	 */
+	
+	public int properRange(String prompt) {
+		System.out.print(prompt);				//Outputs the text in our method call parameters
+		int input = 0;
+		boolean isWithinRange = false;
+		
+		while (isWithinRange == false) {
+			input = StringInput();				//collects the users input
+			if (input >= 1 && input <= 9) {
+				isWithinRange = true;
+			}
+			else {
+				System.out.println("Please enter a valid move");
+			}
+		}
+		return input;
+	}
 	
 	/*
 	 * This method validates that user has entered an integer.
@@ -29,7 +49,7 @@ public class placeMove {
 				input = keyboard.nextInt();
 				isInputBad = false;
 			}
-			keyboard.nextLine();
+			keyboard.nextLine();		//cleans up the input stream
 		}
 		return input;	
 	}
@@ -141,9 +161,7 @@ public class placeMove {
 		case 9:
 			board[2][2] = symbol;
 			break;
-			
-			
-			
+
 		}
 	}
 }

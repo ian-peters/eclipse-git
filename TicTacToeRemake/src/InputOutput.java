@@ -16,7 +16,8 @@ public class InputOutput {
 	placeMove nextMove = new placeMove();
 	EndOfGame gameOverCheck = new EndOfGame();
 	boolean gameNotOver = true;
-	int userMove;
+	boolean invalidInput = true;
+	int userMove= 0;
 
 	
 	char[][] board =  {{' ',' ',' '},
@@ -25,15 +26,10 @@ public class InputOutput {
 	
 	
 	while (gameNotOver) {
-		System.out.print("Enter your move: ");
 		
-		userMove = nextMove.StringInput();
+		userMove = nextMove.properRange("Enter your move: ");	//Validates users input as an integer ranging from 1 to 9
 		
-		//userMove = keyboard.nextInt();
-		
-		
-		
-		//Selected column column/row combination must be empty
+		//Selected position on the board must be empty 
 		if (nextMove.repeatedMove(board, userMove) == 1) {
 		}	
 		else {
@@ -41,7 +37,6 @@ public class InputOutput {
 			printedBoard.printBoard(board);	
 		}
 		
-
 		//Checks if the game is over
 		if (gameOverCheck.CallMethod(board, 'x') != 0) {
 			System.out.print(gameOverCheck.printEndMessage());
