@@ -62,55 +62,55 @@ public class placeMove {
 		int repeat = 0;
 		switch(placement) {
 		case 1:
-			if (board[0][0] == 'x') {
+			if (board[0][0] == 'x' || board[0][0] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;			
 		case 2:
-			if (board[0][1] == 'x') {
+			if (board[0][1] == 'x' || board[0][1] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 3:
-			if (board[0][2] == 'x') {
+			if (board[0][2] == 'x' || board[0][2] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 4:
-			if (board[1][0] == 'x') {
+			if (board[1][0] == 'x' || board[1][0] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 5:
-			if (board[1][1] == 'x') {
+			if (board[1][1] == 'x' || board[1][1] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 6:
-			if (board[1][2] == 'x') {
+			if (board[1][2] == 'x' || board[1][2] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 7:
-			if (board[2][0] == 'x') {
+			if (board[2][0] == 'x' || board[2][0] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;
 		case 8:
-			if (board[2][1] == 'x') {
+			if (board[2][1] == 'x' || board[2][1] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
 				break;			
 		case 9:
-			if (board[2][2] == 'x') {
+			if (board[2][2] == 'x' || board[2][2] == 'o') {
 				System.out.println("No space");
 				repeat = 1;
 			}
