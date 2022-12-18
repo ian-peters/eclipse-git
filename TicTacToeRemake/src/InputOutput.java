@@ -15,8 +15,9 @@ public class InputOutput {
 	printBoard printedBoard = new printBoard();
 	placeMove nextMove = new placeMove();
 	EndOfGame gameOverCheck = new EndOfGame();
+	TurnChanger changeTurn = new TurnChanger();
+	
 	boolean gameNotOver = true;
-	boolean invalidInput = true;
 	int userMove= 0;
 
 	
@@ -26,19 +27,20 @@ public class InputOutput {
 	
 	
 	while (gameNotOver) {
-		
 		userMove = nextMove.properRange("Enter your move: ");	//Validates users input as an integer ranging from 1 to 9
 		
-		//Selected position on the board must be empty 
-		if (nextMove.repeatedMove(board, userMove) == 1) {
-		}	
-		else {
-			nextMove.insertMove(board, userMove, 'x');
-			printedBoard.printBoard(board);	
-		}
+		changeTurn.playerTurn(board, userMove);
+		changeTurn.computerTurn(board);
+		
+		printedBoard.printBoard(board);	
+		
 		
 		//Checks if the game is over
 		if (gameOverCheck.CallMethod(board, 'x') != 0) {
+			System.out.print(gameOverCheck.printEndMessage());
+			gameNotOver = false;
+		}
+		else if (gameOverCheck.CallMethod(board, 'o') != 0) {
 			System.out.print(gameOverCheck.printEndMessage());
 			gameNotOver = false;
 		}
