@@ -8,7 +8,7 @@
 
 public class EndOfGame {
 	private int result;
-	private int count = 0;
+	private int movesLeft = 9;
 	private static final int PLAYER_WIN = 1;
 	private static final int COMPUTER_WIN = 3;
 	private static final int DRAW = 2;
@@ -45,7 +45,7 @@ public class EndOfGame {
 	 */
 	public int CallMethod(char[][] board) {
 	int result = 0;
-	count++;
+	movesLeft--;
 	
 		if (wonDiagonal(board, 'x') == 1 || testGame(board, 'x') == 1) {
 			result = PLAYER_WIN;
@@ -53,8 +53,10 @@ public class EndOfGame {
 		else if (wonDiagonal(board, 'o') == 1 || testGame(board, 'o') == 1) {
 			result = COMPUTER_WIN; 
 		}
-		else if (count == 5)
+		else if (movesLeft == 0) { 
 			result = DRAW;
+		}
+			
 	this.result = result;
 	return result;
 		

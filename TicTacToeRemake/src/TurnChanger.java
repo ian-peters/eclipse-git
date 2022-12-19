@@ -1,4 +1,3 @@
-import java.util.Random;
 
 public class TurnChanger {
 
@@ -34,16 +33,11 @@ public class TurnChanger {
 		
 		while(compTurn) {
 			double rollValue = (Math.random() + 0.1) * 9;		//Selects a random number for the computers turn
-			int compMove = (int)rollValue;						
-			if (nextMove.repeatedMove(board, compMove) == 1) {
-				
-			}	
-			else {
+			int compMove = (int)rollValue;	
+			if (nextMove.repeatedMove(board, compMove) != 1 && compMove != 0) { // "!= 0" to prevent invalid moves
 				nextMove.insertMove(board, compMove, 'o');
 				compTurn = false;
-				
 			}
-			
 		}
 		
 	}

@@ -57,7 +57,7 @@ public class placeMove {
 	 * This method prevents the user or computer from repeating a move.
 	 */
 	public int repeatedMove(char[][] board, int placement) {
-		int repeat = 0;
+		int repeat = 2;
 		switch(placement) {
 		case 1:
 			if (board[0][0] == 'x' || board[0][0] == 'o') { 
