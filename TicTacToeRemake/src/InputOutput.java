@@ -19,6 +19,7 @@ public class InputOutput {
 	
 	boolean gameNotOver = true;
 	int userMove= 0;
+	int count = 0;
 
 	
 	char[][] board =  {{' ',' ',' '},
@@ -35,6 +36,13 @@ public class InputOutput {
 		printedBoard.printBoard(board);	
 		
 		
+	
+		
+		if (gameOverCheck.CallMethod(board) != 0) {
+			System.out.print(gameOverCheck.printEndMessage());
+			gameNotOver = false;
+		}
+		/*
 		//Checks if the game is over
 		if (gameOverCheck.CallMethod(board, 'x') != 0) {
 			System.out.print(gameOverCheck.printEndMessage());
@@ -43,7 +51,7 @@ public class InputOutput {
 		else if (gameOverCheck.CallMethod(board, 'o') != 0) {
 			System.out.print(gameOverCheck.printEndMessage());
 			gameNotOver = false;
-		}
+		}*/
 	
 	
 		}

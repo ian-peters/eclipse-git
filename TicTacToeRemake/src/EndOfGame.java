@@ -8,6 +8,10 @@
 
 public class EndOfGame {
 	private int result;
+	private int count = 0;
+	private static final int PLAYER_WIN = 1;
+	private static final int COMPUTER_WIN = 3;
+	private static final int DRAW = 2;
 	
 	/*
 	 * No argument constructor;
@@ -39,21 +43,23 @@ public class EndOfGame {
 	/*
 	 * Catch-all method created to simplify calls to this classes methods
 	 */
-	public int CallMethod(char[][] board, char symbol) {
+	public int CallMethod(char[][] board) {
 	int result = 0;
-		if (wonDiagonal(board, symbol) != 0) {
-			result = wonDiagonal(board, symbol);
-			
-			result = this.result;
+	count++;
+	
+		if (wonDiagonal(board, 'x') == 1 || testGame(board, 'x') == 1) {
+			result = PLAYER_WIN;
 		}
-		else if (testGame (board, symbol) != 0) {
-			result = testGame (board, symbol);
-			result = this.result;
+		else if (wonDiagonal(board, 'o') == 1 || testGame(board, 'o') == 1) {
+			result = COMPUTER_WIN; 
 		}
-		return result;
+		else if (count == 5)
+			result = DRAW;
+	this.result = result;
+	return result;
+		
 	}
-	
-	
+
 	/*
 	 * This method determines if the game has been ended by a diagonal line.
 	 */
@@ -67,9 +73,9 @@ public class EndOfGame {
 				count++;
 			}
 		}
+		
 		if (count == 3) {
 			result = 1;
-			this.result = result;
 		}
 		else {
 			count = 0;
@@ -81,13 +87,12 @@ public class EndOfGame {
           	count++;
 			}
 		}
-			if (count == 3) {
-				result = 1;
-				this.result = result;
-			}
-			else {
-				count = 0;
-			}
+		if (count == 3) {
+			result = 1;
+		}
+		else {
+			count = 0;
+		}
     return result;
 	}
  
@@ -96,7 +101,7 @@ public class EndOfGame {
 	 * This method determines if the game has been ended by a straight line.
 	 */	
 	private int testGame(char[][] board, int symbol){
-	//Horizontal check
+	//Vertical check
 	int result = 0;
 	for (int column = 0; column < 3; column++) {
 		int count = 0;
@@ -107,11 +112,10 @@ public class EndOfGame {
 		}
 		if (count == 3) {
 			result = 1;
-			this.result = result;
 		}
 	}
 	
-	//Vertical check
+	//Horizontal check
 	for (int column = 0; column < 3; column++) {
 		int count = 0;
 		for (int row = 0; row < 3; row++) {
@@ -120,8 +124,7 @@ public class EndOfGame {
 			}
 		}
 		if (count == 3) {
-			result = 1;
-			this.result = result;
+			result = 1;		
 		}
 	}
 	return result;
