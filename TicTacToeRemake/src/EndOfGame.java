@@ -9,9 +9,11 @@
 public class EndOfGame {
 	private int result;
 	private int movesLeft = 9;
-	private static final int PLAYER_WIN = 1;
-	private static final int COMPUTER_WIN = 3;
+	private static final int PLAYER1_WIN = 1;
 	private static final int DRAW = 2;
+	private static final int COMPUTER_WIN = 3;
+	private static final int PLAYER2_WIN = 4;
+
 	
 	/*
 	 * No argument constructor;
@@ -33,6 +35,9 @@ public class EndOfGame {
 		case 3:
 			endMessage = "The Computer wins!";
 			break;
+		case 4:
+			endMessage = "Player 2 wins!";
+			break;
 		default:
 			break;
 		}
@@ -43,18 +48,20 @@ public class EndOfGame {
 	/*
 	 * Catch-all method created to simplify calls to this classes methods
 	 */
-	public int CallMethod(char[][] board) {
+	public int CallMethod(char[][] board, int gameMode) {
 	int result = 0;
 	movesLeft--;
-	
 		if (wonDiagonal(board, 'x') == 1 || testGame(board, 'x') == 1) {
-			result = PLAYER_WIN;
-		}
-		else if (wonDiagonal(board, 'o') == 1 || testGame(board, 'o') == 1) {
-			result = COMPUTER_WIN; 
+			result = PLAYER1_WIN;
 		}
 		else if (movesLeft == 0) { 
 			result = DRAW;
+		}
+		else if ((wonDiagonal(board, 'o') == 1 || testGame(board, 'o') == 1) && gameMode == 1) {
+			result = COMPUTER_WIN; 
+		}
+		else if ((wonDiagonal(board, 'o') == 1 || testGame(board, 'o') == 1) && gameMode == 2) {
+			result = PLAYER2_WIN; 
 		}
 			
 	this.result = result;
@@ -69,13 +76,12 @@ public class EndOfGame {
 	private int wonDiagonal(char[][] board, char symbol){
 	int count = 0;
 	int result = 0;
-	// Check first diagonal (1-9)
+	// Check first diagonal (1, 5, 9)
 		for (int column = 0; column < 3; column++) {
 			if (board[column][column] == symbol) {
 				count++;
 			}
 		}
-		
 		if (count == 3) {
 			result = 1;
 		}
@@ -83,7 +89,7 @@ public class EndOfGame {
 			count = 0;
 		}
 
-    // Check second diagonal (3-7)
+    // Check second diagonal (3, 5, 7)
 		for (int column = 0; column < 3; column++) {
 			if (board[column][2 - column] == symbol) {	
           	count++;

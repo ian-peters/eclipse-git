@@ -9,7 +9,7 @@ public class TurnChanger {
 	/*
 	 * This method is called when it is the players turn
 	 */
-	public void playerTurn (char[][] board, int userMove) {
+	public void playerTurn (char[][] board, int userMove, char symbol) {
 		boolean playTurn = true;
 		
 		while(playTurn) {
@@ -18,7 +18,7 @@ public class TurnChanger {
 				userMove = nextMove.properRange("Enter your move: ");
 			}	
 			else {
-				nextMove.insertMove(board, userMove, 'x');
+				nextMove.insertMove(board, userMove, symbol);
 				playTurn = false;
 			}	
 		}

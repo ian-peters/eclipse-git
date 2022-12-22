@@ -1,30 +1,49 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class TestingClass {
 	
+	
+	//Print multiplication tables 1 to 100
+	
 	public static void main(String[] args) {
-		Random rand = new Random();
-		boolean test = true;
-		int aftervalue;
+		Scanner keyboard = new Scanner(System.in);
 		
-		while(test) {
-			double startingValue = (Math.random()+0.1) * 9;
-			aftervalue = (int)startingValue;
-			if (aftervalue == 10) {
-				test = false;
-				
-			}
-			else {
-				System.out.print(aftervalue);
+	
+		for (int i = 1; i <= 10; i++) {
+			for (int j = 1; j <= 10; j++) {
+				System.out.println(i + " x " + j + " = " + (i*j));
 			}
 		}
 		
-		double startingValue = (Math.random()+0.1) * 9; 
-		System.out.println((int)startingValue);
+	}
+}
+		/*int outer = 1;
+		int inner = 1;
 		
-		//int compMove = rand.nextInt(9) + 1;
-		//System.out.println(compMove);
+		while (outer <= 10) {
+			inner = 1;
+			while (inner <= 10) {
+			    System.out.println(outer + " x " + inner + " = " + (inner * outer));
+			    inner = inner + 1;
+			}
+		outer = outer +1;
+		}
+	
+	}*/
+
+
+	/*	
+		int[] myArray =  {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		
+		System.out.print(" " + myArray);
+		
+		
+		for (int i = 0; i < 6; i++) {
+			System.out.print(" " + myArray[i]);
+		//	for (int j = 0; j < 6; j++) {
+			
+		}
 		
 	}
 
-}
+}*/

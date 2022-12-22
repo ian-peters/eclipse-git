@@ -8,7 +8,6 @@
 public class printBoard {
 	
 	printBoard() {}
-	
 	    public void printBoard(char board[][]) {
 		System.out.print(board[0][0]);
 		System.out.print("|");
